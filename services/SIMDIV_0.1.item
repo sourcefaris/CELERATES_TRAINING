@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Services="http://www.talend.org/Services">
+  <Services:ServiceConnection xmi:id="_XM0zEKqdEemErr21x1QCHQ" servicePort="_XNorYKqdEemErr21x1QCHQ"/>
+  <Services:ServicePort xmi:id="_XNorYKqdEemErr21x1QCHQ" name="SIMDIVPortType" id="_XNndQKqdEemErr21x1QCHQ" serviceOperation="_XNorYaqdEemErr21x1QCHQ"/>
+  <Services:ServiceOperation xmi:id="_XNorYaqdEemErr21x1QCHQ" label="SIMDIVOperation-SIMDIV" name="SIMDIVOperation" id="_XNndQaqdEemErr21x1QCHQ" referenceJobId="_s12-wKqiEemErr21x1QCHQ"/>
+</xmi:XMI>

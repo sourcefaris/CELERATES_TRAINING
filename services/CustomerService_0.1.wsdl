@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CustomerService"
+		xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://www.talend.org/service/"
+		targetNamespace="http://www.talend.org/service/">
+
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.talend.org/service/">
+			<xsd:element name="SelectCustomerByIdRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="id" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SelectCustomerByIdResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="email" type="xsd:string"></xsd:element>
+						<xsd:element name="phone"
+							type="xsd:string">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		
+            <xsd:element name="InsertCustomerRequest">
+            	<xsd:complexType>
+            		<xsd:sequence>
+
+            			<xsd:element name="id" type="xsd:string"></xsd:element>
+            			<xsd:element name="phone" type="xsd:string">
+            			</xsd:element>
+            			<xsd:element name="email"
+            				type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="InsertCustomerResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+
+            			<xsd:element name="out" type="xsd:string"></xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="SelectCustomerByIdRequest">
+		<wsdl:part name="parameters" element="tns:SelectCustomerByIdRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="SelectCustomerByIdResponse">
+		<wsdl:part name="parameters" element="tns:SelectCustomerByIdResponse"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:message name="InsertCustomerRequest">
+		<wsdl:part name="parameters" element="tns:InsertCustomerRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="InsertCustomerResponse">
+		<wsdl:part name="parameters" element="tns:InsertCustomerResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CustomerServicePortType">
+		<wsdl:operation name="SelectCustomerById">
+			<wsdl:input message="tns:SelectCustomerByIdRequest"></wsdl:input>
+			<wsdl:output message="tns:SelectCustomerByIdResponse"></wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="InsertCustomer">
+			<wsdl:input message="tns:InsertCustomerRequest"></wsdl:input>
+			<wsdl:output message="tns:InsertCustomerResponse"></wsdl:output>
+        </wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="CustomerServiceBinding"
+		type="tns:CustomerServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="SelectCustomerById">
+			<soap:operation
+				soapAction="http://www.talend.org/service/SelectCustomerById" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InsertCustomer">
+			<soap:operation
+				soapAction="http://www.talend.org/service/InsertCustomer" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="CustomerService">
+		<wsdl:port name="CustomerServicePort" binding="tns:CustomerServiceBinding">
+			<soap:address location="http://localhost:8090/CustomerService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

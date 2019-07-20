@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SIMDIV"
+		xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://www.talend.org/service/"
+		targetNamespace="http://www.talend.org/service/">
+
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.talend.org/service/">
+			<xsd:element name="SIMDIVOperationRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="kddivisi"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="is_jo" type="xsd:string">
+						</xsd:element>
+						<xsd:element name="kode_spk"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="nama_spk"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="nama_spk_full"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="lokasi" type="xsd:string">
+						</xsd:element>
+						<xsd:element name="alamatproyek"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="tgl_mulai"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="tgl_selesai"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="bast1" type="xsd:string">
+						</xsd:element>
+						<xsd:element name="omset" type="xsd:int">
+						</xsd:element>
+						<xsd:element name="kd_pemilik"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="nm_pemilik"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="sumberdana"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="jenisproyek"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="manager_proyek"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="telp_manajer"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="iswilayah"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="is_pmcs" type="xsd:string">
+						</xsd:element>
+						<xsd:element name="nomorkontrak"
+							type="xsd:string">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SIMDIVOperationResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="status" type="xsd:string"></xsd:element>
+						<xsd:element name="message"
+							type="xsd:string">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="SIMDIVOperationRequest">
+		<wsdl:part name="parameters" element="tns:SIMDIVOperationRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="SIMDIVOperationResponse">
+		<wsdl:part name="parameters" element="tns:SIMDIVOperationResponse"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:portType name="SIMDIVPortType">
+		<wsdl:operation name="SIMDIVOperation">
+			<wsdl:input message="tns:SIMDIVOperationRequest"></wsdl:input>
+			<wsdl:output message="tns:SIMDIVOperationResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="SIMDIVBinding" type="tns:SIMDIVPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="SIMDIVOperation">
+			<soap:operation soapAction="http://www.talend.org/service/SIMDIVOperation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="SIMDIV">
+		<wsdl:port name="SIMDIVPort" binding="tns:SIMDIVBinding">
+			<soap:address location="http://localhost:8090/services/SIMDIV" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
