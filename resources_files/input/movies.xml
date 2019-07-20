@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+	<movie ASIN="B01DY8NDBM">
+		<title>Star Trek</title>
+		<director>J.J. Abrams</director>
+		<releaseDate>06/14/2016</releaseDate>
+		<runTime>126</runTime>
+		<studio>Paramount</studio>
+		<price>29.96</price>
+		<discType>4k</discType>
+	</movie>
+	<movie ASIN="B01DY8NDBN">
+		<title>Avengers Endgame</title>
+		<director>Anthony Russo, Joe Russo</director>
+		<releaseDate>04/24/2019</releaseDate>
+		<runTime>181</runTime>
+		<studio>Marvel</studio>
+		<price>29.96</price>
+		<discType>SD</discType>
+	</movie>
+	<movie ASIN="B01DY8NDBO">
+		<title>Avengers Invinity War</title>
+		<director>Anthony Russo, Joe Russo</director>
+		<releaseDate>04/27/2018</releaseDate>
+		<runTime>149</runTime>
+		<studio>Marvel</studio>
+		<price>29.96</price>
+		<discType>BluRay</discType>
+	</movie>
+
+</catalog>
